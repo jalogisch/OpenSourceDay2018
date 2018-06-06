@@ -2,7 +2,7 @@
 name: inverse
 layout: true
 class: center, middle, inverse
-
+---
 #deep dive into processing pipelines
 
 open dource day 2018, berlin
@@ -73,19 +73,17 @@ give the ability to ...
 
 ---
 name: how
-layout: true
-class: center, middle, inverse
-
+template: inverse
 
 # what is processing pipelines
-
 ---
+template: inverse
 
----
-
-make a log message readable 
+###make a log message readable 
 
 --
+template: inverse
+
 ##create value for non specialist
 
 ---
@@ -337,7 +335,9 @@ end
 
 
 ---
+
 name: last-page
 template: inverse
 
 ## That's all folks (for now)!
+Slideshow created using [remark](http://github.com/gnab/remark).
