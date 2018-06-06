@@ -21,9 +21,9 @@ layout: false
 ]
 .pull-right[
 
-* system administrator / support engineer since since 2000
-* work at graylog since 2016
-* (@)jalogisch.red[*]
+* system administrator / support engineer since 2000
+* @ graylog since 2016
+* social media (@)jalogisch.red[*]
 * [about.me/jandoberstein](https://about.me/jandoberstein)
 
 .footnote[.red.bold[*] means 'yes, indeed!']
@@ -178,6 +178,8 @@ pipeline stages can be configured that **all** rules must match to be succesfull
   - rule bar
 * stage 2 (one match)
   - rule beer!
+* stage 3 (one match)
+  - rule whisky
 ```
 ]
 ]
@@ -204,6 +206,8 @@ pipeline stages can be configured that **all** rules must match to be succesfull
   - rule bar
 * stage 2 (one match)
   - rule beer!
+* stage 3 (one match)
+  - rule whisky
 ``` 
 ]
 
@@ -218,7 +222,8 @@ pipeline stages can be configured that **all** rules must match to be succesfull
 * stage 2
    - _bar_ **no-match**
      * `drop out`
-
+* stage 3
+   - **no-run**
 ]
 
 ]
@@ -246,23 +251,33 @@ layout: false
 * SHOULD only changed very carefully
 ]
 ---
-# rule name
 
-* good names
+.left-column[
+#rule 
+##name
+
+]
+.right-column[
+##bad names
+  - 'syslog'
+  - 'test1'
+  - 'foo'
+]
+---
+
+.left-column[
+#rule 
+##name
+]
+.right-column[
+##good names
   - 'extract_mac_from_cisco_message_field'
   - 'route_to_alert_stream'
   - 'ops_add_hw_location'
   - 'dev_extract_modul'
-
+]
 ---
-# rule name
 
-* bad names
-  - 'syslog'
-  - 'test1'
-  - 'foo'
-
----
 # rule detail
 
 * use comments in the rule
