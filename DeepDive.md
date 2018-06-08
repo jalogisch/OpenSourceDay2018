@@ -39,16 +39,16 @@ layout: false
 ]
 .right-column[
 
-* why processing pipelines
-* how it works
-* processing
-  * rules
-  * pipelines
-  * connections
-* rules
-  * best practice
-  * how to construct
-  * examples
+* Why processing pipelines
+* How pipelines work
+* Processing
+  * 
+  * Pipelines
+  * Connections
+* Rules
+  * Best practice
+  * How to construct
+  * Examples
 
 ]
 
@@ -56,18 +56,17 @@ layout: false
 
 ---
 .left-column[
-## what do 
-## processing pipelines
+## Processing Pipelines
 
 ]
 
 .right-column[
 
-give the ability to ...
+Give the ability to ...
 
-* grep information out of a string.red[*]
-* add information to a string.red[*]
-* modify information of a string.red[*]
+* Grep information out of a string.red[*]
+* Add information to a string.red[*]
+* Modify information of a string.red[*]
 
 .footnote[.red.bold[*] log messages are strings]
 ]
@@ -77,48 +76,48 @@ give the ability to ...
 name: how
 template: inverse
 
-# why processing pipelines
+# Why processing pipelines?
 ---
 template: inverse
 
-###make a log message readable 
+###Make log messages readable 
 
 --
 template: inverse
 
-##create value for non specialist
+##Create value for non specialists
 
 ---
 layout: false
 name: works
 
 .left-column[
-# how does it work
+# How does it work
 ]
 
 ---
 background-image: url(images/magic.gif)
 .left-column[
-# how does it work
+# How does it work
 ]
 
 
 ---
 .left-column[
-# how does it work
-## overview 
+# How does it work
+## Overview 
 ]
 
 .right-column[
 
 
-* write instructions
-  * processing rules
+* Write instructions
+  * Processing rules
 
-* order the instructions
-  * processing pipeline
+* Order the instructions
+  * Processing pipeline
 
-* connect the message stream
+* Connect the message stream
  
 
 ]
@@ -127,7 +126,7 @@ background-image: url(images/magic.gif)
 ---
 
 .left-column[
-# rules
+# Rules
 ]
 
 .right-column[
@@ -164,7 +163,7 @@ end
 
 .right-column[
 
-pipeline stages can be configured that **all** rules must match to be succesfull or that at **least one** of the rules must match to go to the next stage
+Pipeline stages can be configured that **all** rules must match to be succesfull or that at **least one** of the rules must match to go to the next stage
 
 
 .pull-left[
@@ -193,7 +192,7 @@ pipeline stages can be configured that **all** rules must match to be succesfull
 
 .right-column[
 
-pipeline stages can be configured that **all** rules must match to be succesfull or that at **least one** of the rules must match to go to the next stage
+Pipeline stages may be configured where **all** rules must match to be succesful or that at **least one** of the rules must match to progress to the next stage
 
 
 .pull-left[
@@ -234,7 +233,7 @@ layout: true
 class: center, middle, inverse
 
 #rules
-the backbone
+The backbone
 
 ---
 
@@ -246,9 +245,9 @@ layout: false
 ]
 
 .right-column[
-* **must** be uniq
-* is the only identifier 
-* **should** only changed very carefully
+* **Must** be unique
+* Is the only identifier 
+* **Should** only be changed very carefully
 ]
 ---
 
@@ -284,9 +283,9 @@ layout: false
 
 ]
 .right-column[
-* use comments in the rule
-* write more small rules with one specific action (**kiss**)
-* make them usefull for multiple pipelines
+* Use comments in the rule
+* Write more small rules with one specific action (**KISS**)
+* Make them useful for multiple pipelines
 ]
 
 ---
@@ -296,37 +295,37 @@ layout: false
 ##creation
 ]
 .right-column[
-* construct rules with data
-  - or know how your data will be transformed
-* test rules 
-  - have a test system 
-  - know that adjustance need time
-* do not expect valid data with first message
+* Construct rules with data
+  - Or know how your data will be transformed
+* Test rules 
+  - Have a test system 
+  - Know that adjustance need time
+* Do not expect valid data with first message
 ]
 
 ---
 
 .left-column[
-#rule
-##creation
+#Rule
+##Creation
 ]
 
 .right-column[
-* access fields with `$message.field_name`
-* field need to be present
-* field typ need to be set in rules
+* Access fields with `$message.field_name`
+* Field need to be present
+* Field typ need to be set in rules
 ]
 
 ---
 
 
 .left-column[
-#rule 
-##creation
+#Rule 
+##Creation
 ]
 
 .right-column[
-* field need to be present
+* Field need to be present
 
 ```bash
 rule "check hostname (error in server.log if missing)"
@@ -351,12 +350,12 @@ end
 
 ---
 .left-column[
-#rule 
-##creation
+#Rule 
+##Creation
 ]
 
 .right-column[
-* field typ need to be set in rules
+* Field type need to be set in rules
 
 ```bash
 rule "-4 hours"
@@ -373,22 +372,22 @@ end
 ---
 
 .left-column[
-#rule
-##creation
+#Rule
+##Creation
 ]
 
 .right-column[
-* use documentation as reference
-* use tests [src/test/ressources](https://github.com/Graylog2/graylog2-server/tree/master/graylog2-server/src/test/resources/org/graylog/plugins/pipelineprocessor/functions) as reference
-* contribute to the [documentation of processing pipelines](http://docs.graylog.org/en/stable/pages/pipelines.html)
+* Use documentation as reference
+* Use tests [src/test/ressources](https://github.com/Graylog2/graylog2-server/tree/master/graylog2-server/src/test/resources/org/graylog/plugins/pipelineprocessor/functions) as reference
+* Contribute to the [documentation of processing pipelines](http://docs.graylog.org/en/stable/pages/pipelines.html)
 ]
 
 
 ---
 
 .left-column[
-#rule 
-##common
+#Rule 
+##Common
 
 ]
 
@@ -411,8 +410,8 @@ end
 ---
 
 .left-column[
-#rule
-##common
+#Rule
+##Common
 ]
 
 .right-column[
@@ -430,8 +429,8 @@ end
 ---
 
 .left-column[
-#rule
-##common
+#Rule
+##Common
 ]
 
 .right-column[
@@ -459,8 +458,8 @@ end
 ---
 
 .left-column[
-#rule
-##common
+#Rule
+##Common
 ]
 
 .right-column[
@@ -500,8 +499,8 @@ SET timestamp=%{NUMBER:mysql_timestamp}
 ---
 
 .left-column[
-#rule
-##common
+#Rule
+##Common
 ]
 
 .right-column[
@@ -534,8 +533,8 @@ end
 ---
 
 .left-column[
-#rule
-##common
+#Rule
+##Common
 ]
 
 .right-column[
@@ -565,8 +564,8 @@ end
 ---
 
 .left-column[
-#rule
-##common
+#Rule
+##Common
 ]
 
 .right-column[
@@ -597,18 +596,18 @@ end
 ---
 
 .left-column[
-#summary
-## rules
+#Summary
+## Rules
 ]
 
 .right-column[
 
-* **when** should be very specific
- * try to sort away messages before heavy processing
- * actively choose what message get processed
-* use _debug_ fields in the messages
+* **When** should be very specific
+ * Try to sort away messages before heavy processing
+ * Actively choose what message get processed
+* Use _debug_ fields in the messages
  * e.g. what pipe and rule last touched the message
-* use _debug_ function when deleting messages
+* Use _debug_ function when deleting messages
 
 ]
 
@@ -617,26 +616,26 @@ end
 
 .left-column[
 #summary
-## rules
-## pipe
+## Rules
+## Pipe
 ]
 
 .right-column[
 
 
-* **when** should be very specific
- * try to sort away messages before heavy processing
- * actively choose what message get processed
-* use _debug_ fields in the messages
+* **When** should be very specific
+ * Try to sort away messages before heavy processing
+ * Actively choose what message get processed
+* Use _debug_ fields in the messages
  * e.g. what pipe and rule last touched the message
-* use _debug_ function when deleting messages
+* Use _debug_ function when deleting messages
 
 
-* prefer multiple **stages** over complicated rules
- * see [post working with cisco messages](https://jalogisch.de/2018/working-with-cisco-asa-nexus-on-graylog/).red[*]
-* only run rules and pipelines you understand
-* monitor the metrics (use [metric-reporter-plugin!](https://github.com/graylog-labs/graylog-plugin-metrics-reporter))
- * you will have messages that break your processing
+* Prefer multiple **stages** over complicated rules
+ * See [post working with cisco messages](https://jalogisch.de/2018/working-with-cisco-asa-nexus-on-graylog/).red[*]
+* Only run rules and pipelines you understand
+* Monitor the metrics (use [metric-reporter-plugin!](https://github.com/graylog-labs/graylog-plugin-metrics-reporter))
+ * You will have messages that break your processing
 
 
 .footnote[.red.bold[*] kudos to @wrf42] 
@@ -650,4 +649,7 @@ name: last-page
 template: inverse
 
 ## That's all folks (for now)!
-Slideshow created using [remark](http://github.com/gnab/remark).
+Slides
+
+
+created using [remark](http://github.com/gnab/remark).
