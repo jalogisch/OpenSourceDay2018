@@ -39,16 +39,16 @@ layout: false
 ]
 .right-column[
 
-* Why processing pipelines
-* How pipelines work
-* Processing
-  * 
-  * Pipelines
-  * Connections
-* Rules
-  * Best practice
-  * How to construct
-  * Examples
+* why processing pipelines
+* how pipelines work
+* processing
+  * rules
+  * pipelines
+  * connections
+* rules
+  * best practice
+  * how to construct
+  * examples
 
 ]
 
@@ -56,17 +56,17 @@ layout: false
 
 ---
 .left-column[
-## Processing Pipelines
+##processing pipelines
 
 ]
 
 .right-column[
 
-Give the ability to ...
+###give the ability to ...
 
-* Grep information out of a string.red[*]
-* Add information to a string.red[*]
-* Modify information of a string.red[*]
+* grep information out of a string.red[*]
+* add information to a string.red[*]
+* modify information of a string.red[*]
 
 .footnote[.red.bold[*] log messages are strings]
 ]
@@ -76,48 +76,46 @@ Give the ability to ...
 name: how
 template: inverse
 
-# Why processing pipelines?
+# why processing pipelines?
 ---
 template: inverse
 
-###Make log messages readable 
+###make log messages readable 
 
 --
 template: inverse
 
-##Create value for non specialists
+##create value for non specialists
 
 ---
 layout: false
 name: works
 
 .left-column[
-# How does it work
+# how does it work
 ]
 
 ---
 background-image: url(images/magic.gif)
 .left-column[
-# How does it work
+# how does it work
 ]
 
 
 ---
 .left-column[
-# How does it work
-## Overview 
+# how does it work
+##overview 
 ]
 
 .right-column[
 
 
-* Write instructions
-  * Processing rules
-
-* Order the instructions
-  * Processing pipeline
-
-* Connect the message stream
+* write instructions
+  * processing rules
+* order the instructions
+  * processing pipeline
+* connect the message stream
  
 
 ]
@@ -126,7 +124,7 @@ background-image: url(images/magic.gif)
 ---
 
 .left-column[
-# Rules
+#rules
 ]
 
 .right-column[
@@ -163,7 +161,7 @@ end
 
 .right-column[
 
-Pipeline stages can be configured that **all** rules must match to be succesfull or that at **least one** of the rules must match to go to the next stage
+pipeline stages can be configured that **all** rules must match to be succesfull or that at **least one** of the rules must match to go to the next stage
 
 
 .pull-left[
@@ -192,8 +190,7 @@ Pipeline stages can be configured that **all** rules must match to be succesfull
 
 .right-column[
 
-Pipeline stages may be configured where **all** rules must match to be succesful or that at **least one** of the rules must match to progress to the next stage
-
+pipeline stages can be configured that **all** rules must match to be succesfull or that at **least one** of the rules must match to go to the next stage
 
 .pull-left[
 ```
@@ -233,31 +230,32 @@ layout: true
 class: center, middle, inverse
 
 #rules
-The backbone
+the backbone
 
 ---
 
 ---
 layout: false
 .left-column[
-#rule 
-##name
+#rules 
+
 ]
 
 .right-column[
-* **Must** be unique
-* Is the only identifier 
-* **Should** only be changed very carefully
+##name
+* **must** be unique
+* is the only identifier 
+* **should** only be changed very carefully
 ]
 ---
 
 .left-column[
-#rule 
-##name
+#rules 
+##names
 
 ]
 .right-column[
-##bad names
+##bad
   - 'syslog'
   - 'test1'
   - 'foo'
@@ -265,11 +263,11 @@ layout: false
 ---
 
 .left-column[
-#rule 
-##name
+#rules 
+##names
 ]
 .right-column[
-##good names
+##good
   - 'extract_mac_from_cisco_message_field'
   - 'route_to_alert_stream'
   - 'ops_add_hw_location'
@@ -278,14 +276,14 @@ layout: false
 ---
 
 .left-column[
-#rule 
-##detail
-
+#rules 
+##advice
 ]
 .right-column[
-* Use comments in the rule
-* Write more small rules with one specific action (**KISS**)
-* Make them useful for multiple pipelines
+
+* use comments in the rule
+* write more small rules with one specific action (**KISS**)
+* make them useful for multiple pipelines
 ]
 
 ---
@@ -295,37 +293,37 @@ layout: false
 ##creation
 ]
 .right-column[
-* Construct rules with data
-  - Or know how your data will be transformed
-* Test rules 
-  - Have a test system 
-  - Know that adjustance need time
-* Do not expect valid data with first message
+* construct rules with data
+  - or know how your data will be transformed
+* test rules 
+  - have a test system 
+  - know that adjustance need time
+* do not expect valid data with first message
 ]
 
 ---
 
 .left-column[
-#Rule
-##Creation
+#rule
+##creation
 ]
 
 .right-column[
-* Access fields with `$message.field_name`
-* Field need to be present
-* Field typ need to be set in rules
+* access fields with `$message.field_name`
+* field need to be present
+* field typ need to be set in rules
 ]
 
 ---
 
 
 .left-column[
-#Rule 
-##Creation
+#rule 
+##creation
 ]
 
 .right-column[
-* Field need to be present
+###field need to be present
 
 ```bash
 rule "check hostname (error in server.log if missing)"
@@ -350,12 +348,12 @@ end
 
 ---
 .left-column[
-#Rule 
-##Creation
+#rule 
+##creation
 ]
 
 .right-column[
-* Field type need to be set in rules
+###field type need to be set in rules
 
 ```bash
 rule "-4 hours"
@@ -372,22 +370,22 @@ end
 ---
 
 .left-column[
-#Rule
-##Creation
+#rule
+##creation
 ]
 
 .right-column[
-* Use documentation as reference
-* Use tests [src/test/ressources](https://github.com/Graylog2/graylog2-server/tree/master/graylog2-server/src/test/resources/org/graylog/plugins/pipelineprocessor/functions) as reference
-* Contribute to the [documentation of processing pipelines](http://docs.graylog.org/en/stable/pages/pipelines.html)
+* use documentation as reference
+* use tests [src/test/ressources](https://github.com/Graylog2/graylog2-server/tree/master/graylog2-server/src/test/resources/org/graylog/plugins/pipelineprocessor/functions) as reference
+* contribute to the [documentation of processing pipelines](http://docs.graylog.org/en/stable/pages/pipelines.html)
 ]
 
 
 ---
 
 .left-column[
-#Rule 
-##Common
+#rule 
+##common
 
 ]
 
@@ -410,8 +408,8 @@ end
 ---
 
 .left-column[
-#Rule
-##Common
+#rule 
+##common
 ]
 
 .right-column[
@@ -429,8 +427,8 @@ end
 ---
 
 .left-column[
-#Rule
-##Common
+#rule 
+##common
 ]
 
 .right-column[
@@ -458,8 +456,8 @@ end
 ---
 
 .left-column[
-#Rule
-##Common
+#rule 
+##common
 ]
 
 .right-column[
@@ -499,8 +497,8 @@ SET timestamp=%{NUMBER:mysql_timestamp}
 ---
 
 .left-column[
-#Rule
-##Common
+#rule 
+##common
 ]
 
 .right-column[
@@ -533,8 +531,8 @@ end
 ---
 
 .left-column[
-#Rule
-##Common
+#rule 
+##common
 ]
 
 .right-column[
@@ -564,8 +562,8 @@ end
 ---
 
 .left-column[
-#Rule
-##Common
+#rule 
+##common
 ]
 
 .right-column[
@@ -592,22 +590,47 @@ end
 ```
 ]
 
-
 ---
 
 .left-column[
-#Summary
-## Rules
+#rule 
+##common
 ]
 
 .right-column[
 
-* **When** should be very specific
- * Try to sort away messages before heavy processing
- * Actively choose what message get processed
-* Use _debug_ fields in the messages
+```bash
+rule "unifi set hostname from LUT"
+when
+  // use as much fields as possible to 
+  // remove false lookups if device_mac might be present
+  // on other messages
+    has_field("device_mac") AND
+    has_field("device_type")
+then
+    // get hostname based on MAC for unifi devices
+    let update_source = lookup_value("unifi-hostname-lookuptable", $message.device_mac);
+    set_field("source", update_source);
+end
+```
+]
+
+
+---
+
+.left-column[
+#summary
+##rules
+]
+
+.right-column[
+
+* **when** should be very specific
+ * try to sort away messages before heavy processing
+ * actively choose what message get processed
+* use _debug_ fields in the messages
  * e.g. what pipe and rule last touched the message
-* Use _debug_ function when deleting messages
+* use _debug_ function when deleting messages
 
 ]
 
@@ -616,26 +639,26 @@ end
 
 .left-column[
 #summary
-## Rules
-## Pipe
+##rules
+##pipe
 ]
 
 .right-column[
 
 
-* **When** should be very specific
- * Try to sort away messages before heavy processing
- * Actively choose what message get processed
-* Use _debug_ fields in the messages
+* **when** should be very specific
+ * try to sort away messages before heavy processing
+ * actively choose what message get processed
+* use _debug_ fields in the messages
  * e.g. what pipe and rule last touched the message
-* Use _debug_ function when deleting messages
+* use _debug_ function when deleting messages
 
 
-* Prefer multiple **stages** over complicated rules
- * See [post working with cisco messages](https://jalogisch.de/2018/working-with-cisco-asa-nexus-on-graylog/).red[*]
-* Only run rules and pipelines you understand
-* Monitor the metrics (use [metric-reporter-plugin!](https://github.com/graylog-labs/graylog-plugin-metrics-reporter))
- * You will have messages that break your processing
+* prefer multiple **stages** over complicated rules
+ * see [post working with cisco messages](https://jalogisch.de/2018/working-with-cisco-asa-nexus-on-graylog/).red[*]
+* only run rules and pipelines you understand
+* monitor the metrics (use [metric-reporter-plugin!](https://github.com/graylog-labs/graylog-plugin-metrics-reporter))
+ * you will have messages that break your processing
 
 
 .footnote[.red.bold[*] kudos to @wrf42] 
@@ -648,8 +671,5 @@ end
 name: last-page
 template: inverse
 
-## That's all folks (for now)!
-Slides
-
-
-created using [remark](http://github.com/gnab/remark).
+## that's all folks (for now)!
+slides created using [remark](http://github.com/gnab/remark).
