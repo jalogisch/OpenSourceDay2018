@@ -737,5 +737,4 @@ name: last-page
 template: inverse
 
 ## that's all folks (for now)!
-slides available at [github/jalogisch/OpenSourceDay2018](https://github.com/jalogisch/OpenSourceDay2018/)
-slides created using [remark](http://github.com/gnab/remark).
+slides available at [github/jalogisch/OpenSourceDay2018](https://github.com/jalogisch/OpenSourceDay2018/) created using [remark](http://github.com/gnab/remark).
