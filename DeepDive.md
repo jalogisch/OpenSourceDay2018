@@ -27,6 +27,7 @@ layout: false
 * @ graylog since 2016
 * social media (@)jalogisch.red[*]
 * [about.me/jandoberstein](https://about.me/jandoberstein)
+* '95 bandit 600 n driver 
 
 .footnote[.red.bold[*] means 'yes, indeed!']
 ]
@@ -360,7 +361,7 @@ rule "-4 hours"
 when
  has_field("timestamp")
 then
- set_field("timestamp", to_date($message.timestamp) - hours(4));
+ set_field("timestamp",to_date($message.timestamp) - hours(4));
 end
 ```
 ]
@@ -417,7 +418,8 @@ end
 ```bash
 rule "alert_on_sync_failures"
 when
-  has_field("sync_node") AND to_long($message.sync_node) != 0
+  has_field("sync_node") AND
+  to_long($message.sync_node) != 0
 then
   set_field("alert", "1");
 end
@@ -632,7 +634,9 @@ when
     has_field("device_type")
 then
     // get hostname based on MAC for unifi devices
-    let update_source = lookup_value("unifi-hostname-lookuptable", $message.device_mac);
+    let update_source = lookup_value("unifi-hostname-lookuptable", 
+                        $message.device_mac
+                        );
     set_field("source", update_source);
 end
 ```
@@ -654,6 +658,44 @@ end
 * use _debug_ fields in the messages
  * e.g. what pipe and rule last touched the message
 * use _debug_ function when deleting messages
+
+]
+
+---
+
+.left-column[
+#summary
+##rules
+]
+
+.right-column[
+
+* **when** should be very specific
+ * try to sort away messages before heavy processing
+ * actively choose what message get processed
+* use _debug_ fields in the messages
+ * e.g. what pipe and rule last touched the message
+* use _debug_ function when deleting messages
+
+```bash
+set_fields("pipeline", "stage_2_r_clean_up")
+```
+
+
+```bash
+// Print: "INFO : 
+org.graylog.plugins.pipelineprocessor.ast.functions.Function
+ - PIPELINE DEBUG: Dropped message from <source>"
+
+let debug_message = concat("Dropped message from ", 
+                          to_string($message.source)
+                          );
+
+debug(debug_message);
+```
+
+
+
 
 ]
 
@@ -695,4 +737,5 @@ name: last-page
 template: inverse
 
 ## that's all folks (for now)!
+slides available at [github/jalogisch/OpenSourceDay2018](https://github.com/jalogisch/OpenSourceDay2018/)
 slides created using [remark](http://github.com/gnab/remark).
