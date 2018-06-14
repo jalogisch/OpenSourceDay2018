@@ -9,6 +9,10 @@ The initial presentation is done at the [OpenSourceCamp 2018](https://opensource
 * open `Presentation.html` in a browser
 * navigate with arrow keys
 
+# usage direct in the browser
+
+* open [https://cdn.rawgit.com/jalogisch/OpenSourceDay2018/d3ffdebf/Presentation.html#1](https://cdn.rawgit.com/jalogisch/OpenSourceDay2018/d3ffdebf/Presentation.html#1) 
+
 # advice
 * all lowercase is made on purpose
 
